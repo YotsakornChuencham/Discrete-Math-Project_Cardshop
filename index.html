@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LogicCraft Games - Set Theory Catalog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">🎮 LogicCraft Games</div>
+    <nav>
+      <a href="index.html" class="active">หน้าแรก (Set Theory)</a>
+      <a href="truth-table.html">ตัวกรองตรรกศาสตร์ (Boolean)</a>
+      <a href="checkout.html">คำนวณราคา (If-Else)</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">🔍 แคตตาล็อกสินค้าด้วย Set Operations</h1>
+    <p class="page-desc">กรองสินค้าด้วยทฤษฎีเซตผ่านการหา Intersection (∩), Union (∪) และ Relative Complement (\)</p>
+
+    <div class="control-panel">
+      <div class="form-group">
+        <label for="catSelect">เซต A (หมวดหมู่สินค้า):</label>
+        <select id="catSelect">
+          <option value="">-- เลือกหมวดหมู่ทั้งหมด --</option>
+          <option value="RPG">RPG</option>
+          <option value="Action">Action</option>
+          <option value="Strategy">Strategy</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tagSelect">เซต B (แท็กคุณลักษณะ):</label>
+        <select id="tagSelect">
+          <option value="">-- เลือกแท็กทั้งหมด --</option>
+          <option value="InStock">InStock (มีสินค้า)</option>
+          <option value="OnSale">OnSale (ลดราคา)</option>
+          <option value="PreOrder">PreOrder (สั่งจอง)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="opSelect">การดำเนินการทางเซต (Operation):</label>
+        <select id="opSelect">
+          <option value="INTERSECTION">Intersection (A ∩ B)</option>
+          <option value="UNION">Union (A ∪ B)</option>
+          <option value="DIFFERENCE">Difference (A \ B)</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="gameGrid" class="grid"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 LogicCraft Games - Discrete Mathematics Applied Project</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

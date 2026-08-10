@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LogicCraft Games - Boolean Logic Filter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">🎮 LogicCraft Games</div>
+    <nav>
+      <a href="index.html">หน้าแรก (Set Theory)</a>
+      <a href="truth-table.html" class="active">ตัวกรองตรรกศาสตร์ (Boolean)</a>
+      <a href="checkout.html">คำนวณราคา (If-Else)</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">⚡ ค้นหาด้วยนิพจน์ทางตรรกศาสตร์ (Boolean Logic)</h1>
+    <p class="page-desc">ทดสอบการประมวลผลตรรกศาสตร์สัจนิรันดร์และตัวดำเนินการ AND (∧), OR (∨)</p>
+
+    <div class="control-panel" style="flex-direction: column; align-items: flex-start;">
+      <h3 style="margin-bottom: 0.5rem; font-size: 1rem; color: var(--accent-color);">กำหนดค่าตัวแปรประพจน์ (Propositional Variables):</h3>
+      
+      <label class="checkbox-group">
+        <input type="checkbox" id="p_val" checked>
+        <span><strong>P:</strong> สินค้าพร้อมส่ง (InStock)</span>
+      </label>
+
+      <label class="checkbox-group">
+        <input type="checkbox" id="q_val" checked>
+        <span><strong>Q:</strong> สินค้ากำลังจัดรายการโปรโมชัน (OnSale)</span>
+      </label>
+
+      <label class="checkbox-group">
+        <input type="checkbox" id="r_val">
+        <span><strong>R:</strong> ราคาสินค้าต่ำกว่า 500 บาท (Price &lt; 500)</span>
+      </label>
+
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); width: 100%;">
+        <strong>นิพจน์ตรรกศาสตร์:</strong> <code>(P ∧ Q) ∨ R</code> | 
+        <strong>ผลลัพธ์ของระบบ:</strong> <span id="truthValueResult" style="font-weight: bold;">-</span>
+      </div>
+    </div>
+
+    <div id="booleanResults" class="grid"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 LogicCraft Games - Discrete Mathematics Applied Project</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
