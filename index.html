@@ -1,140 +1,858 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="LogicCraft Games - Discrete Mathematics Applied Game Store"
+  >
+
   <title>LogicCraft Games - Store</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
+
 <body>
 
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
   <header>
-    <div class="logo">🎮 LogicCraft Games</div>
-    <nav style="display: flex; align-items: center;">
-      <a href="index.html" class="active">หน้าแรก</a>
-      <a href="truth-table.html">ตัวกรองตรรกศาสตร์</a>
-      <a href="checkout.html">คำนวณราคา</a>
-      
-      <button class="cart-icon-btn" onclick="toggleCart()">
-        🛒 <span class="cart-badge" id="cartBadge">0</span>
+
+    <div class="logo">
+      🃏 YuGiohCardShop
+    </div>
+
+
+    <nav
+      class="main-nav"
+      aria-label="Main Navigation"
+    >
+
+      <a
+        href="index.html"
+        class="active"
+      >
+        หน้าแรก
+      </a>
+
+      <a href="truth-table.html">
+        Boolean Logic
+      </a>
+
+      <a href="checkout.html">
+        คำนวณราคา
+      </a>
+
+
+      <button
+        type="button"
+        class="cart-icon-btn"
+        onclick="toggleCart()"
+        aria-label="เปิดตะกร้าสินค้า"
+      >
+
+        🛒
+
+        <span
+          class="cart-badge hidden"
+          id="cartBadge"
+        >
+          0
+        </span>
+
       </button>
+
     </nav>
+
   </header>
 
-  <div class="container">
-    <h1 class="page-title">🎮 ร้านค้า</h1>
 
-    <!-- Accordion ซ่อนทฤษฎี Math -->
-    <!-- <div class="math-accordion">
-      <div class="math-accordion-header" onclick="toggleMathAccordion()">
-        <span>📐 ดูทฤษฎี Discrete Mathematics ที่ประยุกต์ใช้ในหน้านี้ (Set Theory)</span>
-        <span id="accordionArrow">▼</span>
-      </div>  
-      <div class="math-accordion-content" id="mathAccordionContent">
-        <p><strong>Set Theory Application:</strong> หน้านี้ประยุกต์ใช้ทฤษฎีเซตในการกรองข้อมูลสินค้า ดังนี้:</p>
-        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-          <li><strong>Set A:</strong> เซตของสินค้าตามหมวดหมู่ (Category Set)</li>
-          <li><strong>Set B:</strong> เซตของสินค้าตามสถานะ/แท็ก (Tag Set)</li>
-          <li><strong>Operations:</strong> คำนวณ Intersection ($A \cap B$), Union ($A \cup B$) และ Relative Complement ($A \setminus B$)</li>
-        </ul>
-      </div>
-    </div> -->
 
-    <!-- แถบค้นหา + ปุ่มแฮมเบอร์เกอร์ตัวกรองหมวดหมู่ -->
-    <div class="search-filter-bar">
-      <button class="hamburger-filter-btn" onclick="toggleFilterDrawer()">
-        ☰ <span>ตัวกรองหมวดหมู่</span>
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+  <main class="container">
+
+    <h1 class="page-title">
+      🎮 LogicCraft Card Store
+    </h1>
+
+
+    <!-- Math Explanation -->
+
+    <section class="math-accordion">
+
+      <button
+        type="button"
+        class="math-accordion-header"
+        onclick="toggleMathAccordion()"
+      >
+
+        <span>
+          📐 Discrete Mathematics — Set Theory Filter
+        </span>
+
+        <span id="accordionArrow">
+          ▼
+        </span>
+
       </button>
 
+
+      <div
+        class="math-accordion-content"
+        id="mathAccordionContent"
+      >
+
+        <p>
+          ระบบ Filter ประยุกต์ใช้ Set Theory
+          โดยแต่ละ Filter สามารถมองเป็น Set
+          ของสินค้าที่ตรงตามเงื่อนไข
+        </p>
+
+        <ul>
+
+          <li>
+            <strong>Rarity Set</strong>
+            = เซตสินค้าตามระดับความหายาก
+          </li>
+
+          <li>
+            <strong>Card Frame Set</strong>
+            = เซตสินค้าตามประเภท Frame
+          </li>
+
+          <li>
+            <strong>Attribute Set</strong>
+            = เซตสินค้าตาม Attribute
+          </li>
+
+          <li>
+            <strong>Spell/Trap Set</strong>
+            = เซตสินค้าตามประเภท Spell
+          </li>
+
+          <li>
+            <strong>A ∩ B</strong>
+            = Intersection
+          </li>
+
+          <li>
+            <strong>A ∪ B</strong>
+            = Union
+          </li>
+
+          <li>
+            <strong>A \ B</strong>
+            = Difference
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SEARCH
+         ===================================================== -->
+
+    <section class="search-filter-bar">
+
+      <button
+        type="button"
+        class="hamburger-filter-btn"
+        onclick="toggleFilterDrawer()"
+      >
+
+        ☰
+
+        <span>
+          FILTER CARD SYSTEM
+        </span>
+
+      </button>
+
+
       <div class="search-input-wrapper">
-        <span style="color:var(--text-muted); margin-right:8px;">🔍</span>
-        <input type="text" id="searchInput" placeholder="ค้นหาชื่อเกมที่ต้องการ...">
+
+        <span>
+          🔍
+        </span>
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="ค้นหาชื่อการ์ด..."
+          aria-label="ค้นหาสินค้า"
+        >
+
       </div>
-    </div>
 
-    <!-- รายการการ์ดสินค้า -->
-    <div id="gameGrid" class="grid"></div>
-  </div>
+    </section>
 
-  <!-- Hamburger Filter Drawer ด้านข้าง (Yu-Gi-Oh! Style Grid UI) -->
-<div class="overlay" id="filterOverlay" onclick="toggleFilterDrawer()"></div>
-<div class="filter-drawer" id="filterDrawer">
-  <div class="filter-drawer-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 1rem;">
-    <h2 style="color: var(--accent-color); font-size: 1.4rem; display: flex; align-items: center; gap: 10px;">
-      ⚙️ FILTER CARD SYSTEM
-    </h2>
-    <button onclick="toggleFilterDrawer()" style="background:none; border:none; color:white; cursor:pointer; font-size:1.5rem;">✕</button>
-  </div>
 
-  <!-- Row 1: Rarity / Price Range (เซต A) -->
-  <div class="filter-section">
-    <div class="filter-label-col">
-      <span>💎 Category</span>
-    </div>
-    <div class="filter-options-grid" id="categoryGroup">
-      <div class="filter-btn-chip active" data-value="">ALL</div>
-      <div class="filter-btn-chip" data-value="RPG">RPG</div>
-      <div class="filter-btn-chip" data-value="Action">Action</div>
-      <div class="filter-btn-chip" data-value="Strategy">Strategy</div>
-    </div>
-  </div>
 
-  <!-- Row 2: Card Frame / Tag Status (เซต B) -->
-  <div class="filter-section">
-    <div class="filter-label-col">
+    <!-- =====================================================
+         PRODUCT GRID
+         ===================================================== -->
+
+    <section
+      id="gameGrid"
+      class="grid"
+      aria-live="polite"
+    >
+    </section>
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FILTER OVERLAY
+       ===================================================== -->
+
+  <div
+    class="overlay"
+    id="filterOverlay"
+    onclick="toggleFilterDrawer()"
+  ></div>
+
+
+
+  <!-- =====================================================
+       YU-GI-OH STYLE FILTER DRAWER
+       ===================================================== -->
+
+  <aside
+    class="filter-drawer"
+    id="filterDrawer"
+    aria-hidden="true"
+    aria-label="Filter Card System"
+  >
+
+    <!-- Filter Header -->
+
+    <div class="filter-drawer-header">
+
       <div>
-        <div>🏷️ Status Tag</div>
-        <!-- ปุ่มเลือก OR / AND แบบในรูป -->
-        <div class="logic-toggle-pill active" id="logicToggleBtn" onclick="toggleSetLogic()">OR</div>
+
+        <div class="filter-title">
+          ⚙️ FILTER CARD SYSTEM
+        </div>
+
+        <div class="filter-subtitle">
+          Select card attributes
+        </div>
+
       </div>
-    </div>
-    <div class="filter-options-grid" id="tagGroup">
-      <div class="filter-btn-chip active" data-value="">ALL</div>
-      <div class="filter-btn-chip" data-value="InStock">InStock</div>
-      <div class="filter-btn-chip" data-value="OnSale">OnSale</div>
-      <div class="filter-btn-chip" data-value="PreOrder">PreOrder</div>
-    </div>
-  </div>
 
-  <!-- Row 3: Discrete Math Operation Selector -->
-  <div class="filter-section">
-    <div class="filter-label-col">
-      <span>📐 Math Set Op</span>
-    </div>
-    <div class="filter-options-grid" id="opGroup">
-      <div class="filter-btn-chip active" data-value="INTERSECTION">A ∩ B (AND)</div>
-      <div class="filter-btn-chip" data-value="UNION">A ∪ B (OR)</div>
-      <div class="filter-btn-chip" data-value="DIFFERENCE">A \ B (DIFF)</div>
-    </div>
-  </div>
 
-  <!-- Footer Action -->
-  <div style="margin-top: auto; display: flex; gap: 10px;">
-    <button class="btn" style="flex: 1;" onclick="applyYuGiOhFilter()">APPLY FILTER</button>
-    <button class="btn" style="background: #334155; color: white;" onclick="resetYuGiOhFilter()">RESET</button>
-  </div>
-</div>
-  <!-- Shopee Slide-over Cart Drawer -->
-  <div class="overlay" id="cartOverlay" onclick="toggleCart()"></div>
-  <div class="cart-drawer" id="cartDrawer">
+      <button
+        type="button"
+        class="filter-close-btn"
+        onclick="toggleFilterDrawer()"
+        aria-label="ปิดตัวกรอง"
+      >
+        ✕
+      </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+         RARITY
+         ================================================= -->
+
+    <section class="filter-section">
+
+      <div class="filter-label-col">
+
+        <div class="filter-icon rarity-icon">
+          UR
+        </div>
+
+        <span>
+          Rarity
+        </span>
+
+      </div>
+
+
+      <div
+        class="filter-options-grid"
+        id="rarityGroup"
+      >
+
+        <button
+          type="button"
+          class="filter-btn-chip active"
+          data-group="rarity"
+          data-value=""
+        >
+          ALL
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="rarity"
+          data-value="N"
+        >
+          N
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="rarity"
+          data-value="R"
+        >
+          R
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="rarity"
+          data-value="SR"
+        >
+          SR
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="rarity"
+          data-value="UR"
+        >
+          UR
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CARD FRAME
+         ================================================= -->
+
+    <section class="filter-section">
+
+      <div class="filter-label-col">
+
+        <div class="filter-icon frame-icon">
+          ▣
+        </div>
+
+        <div>
+
+          <span>
+            Card Frame
+          </span>
+
+          <button
+            type="button"
+            id="logicToggleBtn"
+            class="logic-toggle-pill"
+            onclick="toggleSetLogic()"
+          >
+            OR
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="filter-options-grid"
+        id="frameGroup"
+      >
+
+        <button
+          type="button"
+          class="filter-btn-chip active"
+          data-group="frame"
+          data-value=""
+        >
+          ALL
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="frame"
+          data-value="Normal"
+        >
+          Normal
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="frame"
+          data-value="Effect"
+        >
+          Effect
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="frame"
+          data-value="Fusion"
+        >
+          Fusion
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="frame"
+          data-value="Ritual"
+        >
+          Ritual
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="frame"
+          data-value="Synchro"
+        >
+          Synchro
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="frame"
+          data-value="Xyz"
+        >
+          Xyz
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="frame"
+          data-value="Pendulum"
+        >
+          Pendulum
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="frame"
+          data-value="Link"
+        >
+          Link
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="frame"
+          data-value="Spell"
+        >
+          Spell
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="frame"
+          data-value="Trap"
+        >
+          Trap
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ATTRIBUTE
+         ================================================= -->
+
+    <section class="filter-section">
+
+      <div class="filter-label-col">
+
+        <div class="filter-icon attribute-icon">
+          ✦
+        </div>
+
+        <span>
+          Attribute
+        </span>
+
+      </div>
+
+
+      <div
+        class="filter-options-grid"
+        id="attributeGroup"
+      >
+
+        <button
+          type="button"
+          class="filter-btn-chip active"
+          data-group="attribute"
+          data-value=""
+        >
+          ALL
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="attribute"
+          data-value="LIGHT"
+        >
+          LIGHT
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="attribute"
+          data-value="DARK"
+        >
+          DARK
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="attribute"
+          data-value="WATER"
+        >
+          WATER
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="attribute"
+          data-value="FIRE"
+        >
+          FIRE
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="attribute"
+          data-value="EARTH"
+        >
+          EARTH
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="attribute"
+          data-value="WIND"
+        >
+          WIND
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="attribute"
+          data-value="DIVINE"
+        >
+          DIVINE
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SPELL / TRAP
+         ================================================= -->
+
+    <section class="filter-section">
+
+      <div class="filter-label-col">
+
+        <div class="filter-icon spell-icon">
+          ✧
+        </div>
+
+        <span>
+          Types of Spell and Traps
+        </span>
+
+      </div>
+
+
+      <div
+        class="filter-options-grid"
+        id="spellTypeGroup"
+      >
+
+        <button
+          type="button"
+          class="filter-btn-chip active"
+          data-group="spellType"
+          data-value=""
+        >
+          ALL
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="spellType"
+          data-value="Normal Spell"
+        >
+          Normal Spell
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="spellType"
+          data-value="Field Spell"
+        >
+          Field Spell
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="spellType"
+          data-value="Equip Spell"
+        >
+          Equip Spell
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="spellType"
+          data-value="Continuous Spell"
+        >
+          Continuous Spell
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="spellType"
+          data-value="Quick-Play Spell"
+        >
+          Quick-Play Spell
+        </button>
+
+        <button
+          type="button"
+          class="filter-btn-chip"
+          data-group="spellType"
+          data-value="Ritual Spell"
+        >
+          Ritual Spell
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SET THEORY OPERATION
+         ================================================= -->
+
+    <section class="set-operation-section">
+
+      <div class="set-operation-title">
+        📐 Set Operation
+      </div>
+
+
+      <div class="set-operation-grid">
+
+        <button
+          type="button"
+          class="set-operation-btn active"
+          data-operation="INTERSECTION"
+        >
+          A ∩ B
+          <small>AND</small>
+        </button>
+
+        <button
+          type="button"
+          class="set-operation-btn"
+          data-operation="UNION"
+        >
+          A ∪ B
+          <small>OR</small>
+        </button>
+
+        <button
+          type="button"
+          class="set-operation-btn"
+          data-operation="DIFFERENCE"
+        >
+          A \ B
+          <small>DIFF</small>
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FILTER FOOTER
+         ================================================= -->
+
+    <div class="filter-footer">
+
+      <button
+        type="button"
+        class="btn apply-filter-btn"
+        onclick="applyYuGiOhFilter()"
+      >
+        APPLY FILTER
+      </button>
+
+
+      <button
+        type="button"
+        class="btn reset-filter-btn"
+        onclick="resetYuGiOhFilter()"
+      >
+        RESET
+      </button>
+
+    </div>
+
+  </aside>
+
+
+
+  <!-- =====================================================
+       CART
+       ===================================================== -->
+
+  <div
+    class="overlay"
+    id="cartOverlay"
+    onclick="toggleCart()"
+  ></div>
+
+
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-hidden="true"
+    aria-label="Shopping Cart"
+  >
+
     <div class="cart-header">
-      <h3>🛒 ตะกร้าสินค้าของคุณ</h3>
-      <button onclick="toggleCart()" style="background:none; border:none; color:white; cursor:pointer; font-size:1.2rem;">✕</button>
+
+      <h2>
+        🛒 ตะกร้าสินค้า
+      </h2>
+
+      <button
+        type="button"
+        onclick="toggleCart()"
+        aria-label="ปิดตะกร้า"
+      >
+        ✕
+      </button>
+
     </div>
-    <div class="cart-body" id="cartItems"></div>
+
+
+    <div
+      class="cart-body"
+      id="cartItems"
+    >
+    </div>
+
+
     <div class="cart-footer">
-      <div style="display:flex; justify-content:space-between; margin-bottom:1rem; font-weight:bold;">
-        <span>ยอดรวมทั้งหมด:</span>
-        <span id="cartTotalPrice" style="color:var(--success-color);">0.00 ฿</span>
+
+      <div class="cart-total-row">
+
+        <span>
+          ยอดรวม
+        </span>
+
+        <strong id="cartTotalPrice">
+          0.00 ฿
+        </strong>
+
       </div>
-      <a href="checkout.html" class="btn" style="display:block;">ไปหน้าชำระเงิน</a>
+
+
+      <a
+        href="checkout.html"
+        class="btn checkout-btn"
+      >
+        ไปหน้าคำนวณราคา
+      </a>
+
     </div>
-  </div>
+
+  </aside>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
 
   <footer>
-    <p>&copy; 2026 LogicCraft Games - Discrete Mathematics Applied Project</p>
+
+    <p>
+      © 2026 LogicCraft Games
+      - Discrete Mathematics Applied Project
+    </p>
+
   </footer>
 
+
+
   <script src="app.js"></script>
+
 </body>
+
 </html>
