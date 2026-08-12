@@ -3,27 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LogicCraft Games - Boolean Logic Filter</title>
+  <title>LogicCraft Games - Boolean Filter</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <div class="logo">🎮 LogicCraft Games</div>
-    <nav>
+    <nav style="display: flex; align-items: center;">
       <a href="index.html">หน้าแรก (Set Theory)</a>
-      <a href="truth-table.html" class="active">ตัวกรองตรรกศาสตร์ (Boolean)</a>
-      <a href="checkout.html">คำนวณราคา (If-Else)</a>
+      <a href="truth-table.html" class="active">ตัวกรองตรรกศาสตร์</a>
+      <a href="checkout.html">คำนวณราคา</a>
+
+      <button class="cart-icon-btn" onclick="toggleCart()">
+        🛒 <span class="cart-badge" id="cartBadge">0</span>
+      </button>
     </nav>
   </header>
 
   <div class="container">
-    <h1 class="page-title">⚡ ค้นหาด้วยนิพจน์ทางตรรกศาสตร์ (Boolean Logic)</h1>
-    <p class="page-desc">ทดสอบการประมวลผลตรรกศาสตร์สัจนิรันดร์และตัวดำเนินการ AND (∧), OR (∨)</p>
+    <h1 class="page-title">⚡ ตัวกรองตรรกศาสตร์ (Boolean Logic)</h1>
 
-    <div class="control-panel" style="flex-direction: column; align-items: flex-start;">
-      <h3 style="margin-bottom: 0.5rem; font-size: 1rem; color: var(--accent-color);">กำหนดค่าตัวแปรประพจน์ (Propositional Variables):</h3>
-      
+    <div class="math-accordion">
+      <div class="math-accordion-header" onclick="toggleMathAccordion()">
+        <span>📐 ดูทฤษฎี Discrete Mathematics ที่ประยุกต์ใช้ในหน้านี้ (Boolean Logic)</span>
+        <span id="accordionArrow">▼</span>
+      </div>
+      <div class="math-accordion-content" id="mathAccordionContent">
+        <p><strong>Boolean Logic Application:</strong> คำนวณค่าความจริงตามประพจน์ <code>(P ∧ Q) ∨ R</code></p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li><strong>P:</strong> มีสินค้า (InStock)</li>
+          <li><strong>Q:</strong> มีส่วนลด (OnSale)</li>
+          <li><strong>R:</strong> ราคาต่ำกว่า 500 บาท (Price &lt; 500)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="search-filter-bar" style="flex-direction: column; align-items: flex-start;">
       <label class="checkbox-group">
         <input type="checkbox" id="p_val" checked>
         <span><strong>P:</strong> สินค้าพร้อมส่ง (InStock)</span>
@@ -31,21 +47,37 @@
 
       <label class="checkbox-group">
         <input type="checkbox" id="q_val" checked>
-        <span><strong>Q:</strong> สินค้ากำลังจัดรายการโปรโมชัน (OnSale)</span>
+        <span><strong>Q:</strong> จัดรายการโปรโมชัน (OnSale)</span>
       </label>
 
       <label class="checkbox-group">
         <input type="checkbox" id="r_val">
-        <span><strong>R:</strong> ราคาสินค้าต่ำกว่า 500 บาท (Price &lt; 500)</span>
+        <span><strong>R:</strong> ราคาน้อยกว่า 500 บาท (Price &lt; 500)</span>
       </label>
 
-      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); width: 100%;">
-        <strong>นิพจน์ตรรกศาสตร์:</strong> <code>(P ∧ Q) ∨ R</code> | 
-        <strong>ผลลัพธ์ของระบบ:</strong> <span id="truthValueResult" style="font-weight: bold;">-</span>
+      <div style="margin-top: 0.5rem; padding-top: 0.8rem; border-top: 1px solid var(--border-color); width: 100%;">
+        <strong>นิพจน์:</strong> <code>(P ∧ Q) ∨ R</code> | 
+        <strong>ผลลัพธ์:</strong> <span id="truthValueResult" style="font-weight: bold;">-</span>
       </div>
     </div>
 
     <div id="booleanResults" class="grid"></div>
+  </div>
+
+  <div class="overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>🛒 ตะกร้าสินค้าของคุณ</h3>
+      <button onclick="toggleCart()" style="background:none; border:none; color:white; cursor:pointer; font-size:1.2rem;">✕</button>
+    </div>
+    <div class="cart-body" id="cartItems"></div>
+    <div class="cart-footer">
+      <div style="display:flex; justify-content:space-between; margin-bottom:1rem; font-weight:bold;">
+        <span>ยอดรวมทั้งหมด:</span>
+        <span id="cartTotalPrice" style="color:var(--success-color);">0.00 ฿</span>
+      </div>
+      <a href="checkout.html" class="btn" style="display:block;">ไปหน้าชำระเงิน</a>
+    </div>
   </div>
 
   <footer>

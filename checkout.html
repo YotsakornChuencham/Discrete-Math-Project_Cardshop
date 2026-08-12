@@ -3,51 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LogicCraft Games - Checkout (If-Else)</title>
+  <title>LogicCraft Games - Checkout</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <div class="logo">🎮 LogicCraft Games</div>
-    <nav>
-      <a href="index.html">หน้าแรก (Set Theory)</a>
-      <a href="truth-table.html">ตัวกรองตรรกศาสตร์ (Boolean)</a>
-      <a href="checkout.html" class="active">คำนวณราคา (If-Else)</a>
+    <nav style="display: flex; align-items: center;">
+      <a href="index.html">หน้าแรก</a>
+      <a href="truth-table.html">ตัวกรองตรรกศาสตร์</a>
+      <a href="checkout.html" class="active">คำนวณราคา</a>
+
+      <button class="cart-icon-btn" onclick="toggleCart()">
+        🛒 <span class="cart-badge" id="cartBadge">0</span>
+      </button>
     </nav>
   </header>
 
   <div class="container">
-    <h1 class="page-title">🛒 ระบบคำนวณราคาและส่วนลด (If-Else Conditions)</h1>
-    <p class="page-desc">ประมวลผลเงื่อนไขการตัดสินใจขั้นบันได (Decision Trees & Conditional Logic)</p>
+    <h1 class="page-title">🛒 ชำระเงินและคำนวณส่วนลด</h1>
+
+    <div class="math-accordion">
+      <div class="math-accordion-header" onclick="toggleMathAccordion()">
+        <span>📐 ดูทฤษฎี Discrete Mathematics ที่ประยุกต์ใช้ในหน้านี้ (Conditional Logic)</span>
+        <span id="accordionArrow">▼</span>
+      </div>
+      <div class="math-accordion-content" id="mathAccordionContent">
+        <p><strong>Conditional Statements (If-Else):</strong> คำนวณส่วนลดตามผังการตัดสินใจขั้นบันได (Decision Logic) จากยอดรวมในตะกร้าจริง</p>
+      </div>
+    </div>
 
     <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
       <div class="card" style="flex: 1; min-width: 300px;">
-        <h2 style="margin-bottom: 1rem; font-size: 1.2rem;">กรอกข้อมูลการสั่งซื้อ</h2>
-        
-        <div class="form-group" style="margin-bottom: 1rem;">
-          <label for="cartTotal">ราคารวมสินค้าตั้งต้น (บาท):</label>
-          <input type="number" id="cartTotal" value="1200" min="0">
-        </div>
+        <h2 style="margin-bottom: 1rem; font-size: 1.2rem;">ข้อมูลสมาชิกและโค้ดส่วนลด</h2>
 
         <label class="checkbox-group">
-          <input type="checkbox" id="isMember" checked>
+          <input type="checkbox" id="isMember" checked onchange="processCalculation()">
           <span>สมาชิก VIP (VIP Member)</span>
         </label>
 
         <div class="form-group" style="margin-bottom: 1.5rem;">
-          <label for="couponCode">โค้ดส่วนลด (Optional):</label>
-          <input type="text" id="couponCode" placeholder="ลองพิมพ์ DISCRETE2026">
+          <label for="couponCode">โค้ดส่วนลด:</label>
+          <input type="text" id="couponCode" placeholder="ลองพิมพ์ DISCRETE2026" oninput="processCalculation()">
         </div>
 
-        <button class="btn" id="calcBtn" onclick="processCalculation()">คำนวณราคาสุทธิ</button>
+        <button class="btn" onclick="processCalculation()">อัปเดตคำนวณราคา</button>
       </div>
 
       <div class="card" style="flex: 1; min-width: 300px; background-color: #020617;">
-        <h2 style="margin-bottom: 1rem; font-size: 1.2rem; color: var(--accent-color);">สรุปรายการชำระเงิน</h2>
+        <h2 style="margin-bottom: 1rem; font-size: 1.2rem; color: var(--accent-color);">สรุปชำระเงิน (จากตะกร้าจริง)</h2>
         
         <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem;">
-          <span>ราคาตั้งต้น:</span>
+          <span>ราคารวมในตะกร้า:</span>
           <span id="basePriceDisplay">0.00 ฿</span>
         </div>
 
@@ -57,7 +65,7 @@
         </div>
 
         <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--text-muted); font-size: 0.85rem;">
-          <span>เหตุผล:</span>
+          <span>เงื่อนไขส่วนลด:</span>
           <span id="reasonDisplay" style="text-align: right; max-width: 60%;">-</span>
         </div>
 
@@ -71,6 +79,22 @@
     </div>
   </div>
 
+  <div class="overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>🛒 ตะกร้าสินค้าของคุณ</h3>
+      <button onclick="toggleCart()" style="background:none; border:none; color:white; cursor:pointer; font-size:1.2rem;">✕</button>
+    </div>
+    <div class="cart-body" id="cartItems"></div>
+    <div class="cart-footer">
+      <div style="display:flex; justify-content:space-between; margin-bottom:1rem; font-weight:bold;">
+        <span>ยอดรวมทั้งหมด:</span>
+        <span id="cartTotalPrice" style="color:var(--success-color);">0.00 ฿</span>
+      </div>
+      <button class="btn" style="width:100%;" onclick="toggleCart()">ปิดหน้าต่าง</button>
+    </div>
+  </div>
+
   <footer>
     <p>&copy; 2026 LogicCraft Games - Discrete Mathematics Applied Project</p>
   </footer>
@@ -78,12 +102,17 @@
   <script src="app.js"></script>
   <script>
     function processCalculation() {
-      const cartTotal = parseFloat(document.getElementById('cartTotal').value) || 0;
+      // 1. ดึงข้อมูลจาก LocalStorage โดยตรง
+      const cart = getCartFromStorage();
+      const cartTotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
       const isMember = document.getElementById('isMember').checked;
       const couponCode = document.getElementById('couponCode').value;
 
+      // 2. คำนวณราคาด้วย If-Else
       const result = calculateDiscount(cartTotal, isMember, couponCode);
 
+      // 3. แสดงผลราคาสรุป
       document.getElementById('basePriceDisplay').innerText = cartTotal.toFixed(2) + ' ฿';
       document.getElementById('discountRateDisplay').innerText = result.discountPercent + '%';
       document.getElementById('reasonDisplay').innerText = result.reason;

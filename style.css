@@ -44,7 +44,7 @@ header {
 nav a {
   color: var(--text-color);
   text-decoration: none;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -65,29 +65,309 @@ nav a:hover, nav a.active {
   color: var(--accent-color);
 }
 
-.page-desc {
-  color: var(--text-muted);
+/* ==========================================
+   Search & Hamburger Filter Control Bar
+   ========================================== */
+.search-filter-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
   margin-bottom: 1.5rem;
-}
-
-.control-panel {
   background-color: var(--card-bg);
-  padding: 1.5rem;
+  padding: 0.8rem 1rem;
   border-radius: 8px;
   border: 1px solid var(--border-color);
-  margin-bottom: 2rem;
+}
+
+.search-input-wrapper {
+  flex: 1;
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  align-items: center;
+  background-color: #0f172a;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0 0.8rem;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding: 0.6rem 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.hamburger-filter-btn {
+  background: #0f172a;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.hamburger-filter-btn:hover {
+  border-color: var(--accent-color);
+}
+
+/* Modal Drawer สำหรับตัวเลือกหมวดหมู่ */
+/* ==========================================
+   Gaming / Yu-Gi-Oh! Style Filter Drawer
+   ========================================== */
+.filter-drawer {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  max-width: 850px; /* ขยายความกว้างรองรับ Grid แบบในรูป */
+  height: 100vh;
+  background-color: #030712;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.8);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-right: 1px solid var(--accent-color);
+}
+
+.filter-drawer.open {
+  left: 0;
+}
+
+.filter-section {
+  display: flex;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #1e293b;
+  align-items: flex-start;
+}
+
+.filter-label-col {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  padding-top: 6px;
+}
+
+.filter-options-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* จัดเรียง 4 คอลัมน์แบบ Yu-Gi-Oh UI */
+  gap: 10px;
+}
+
+/* ปุ่มเลือกสไตล์เกมการ์ด */
+.filter-btn-chip {
+  background: #090d16;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  padding: 0.6rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.filter-btn-chip:hover {
+  border-color: var(--accent-color);
+  color: #ffffff;
+}
+
+/* สถานะเมื่อปุ่มถูกกดเลือก (Active) */
+.filter-btn-chip.active {
+  background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* ปุ่ม OR / AND Logic Pill */
+.logic-toggle-pill {
+  background: #0f172a;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.logic-toggle-pill.active {
+  background: #38bdf8;
+  color: #020617;
+}
+
+@media (max-width: 768px) {
+  .filter-section {
+    flex-direction: column;
+  }
+  .filter-label-col {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .filter-options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}lid var(--border-color);
+  padding-bottom: 0.8rem;
+
+/* ==========================================
+   Shopee Style Shopping Cart Drawer
+   ========================================== */
+.cart-icon-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 360px;
+  height: 100vh;
+  background-color: var(--card-bg);
+  box-shadow: -4px 0 15px rgba(0,0,0,0.5);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-drawer.open {
+  right: 0;
+}
+
+.cart-header {
+  padding: 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #020617;
+}
+
+.cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
   align-items: center;
 }
 
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-footer {
+  padding: 1.2rem;
+  border-top: 1px solid var(--border-color);
+  background-color: #020617;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.active { display: block; }
+
+/* ==========================================
+   Accordion ซ่อนคำอธิบาย Discrete Math
+   ========================================== */
+.math-accordion {
+  background-color: #020617;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.math-accordion-header {
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.math-accordion-header:hover {
+  color: var(--accent-color);
+}
+
+.math-accordion-content {
+  display: none;
+  padding: 1rem 1.2rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  background-color: #0f172a;
+}
+
+.math-accordion-content.show {
+  display: block;
+}
+
+/* ==========================================
+   Form & Grid System
+   ========================================== */
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  flex: 1;
-  min-width: 200px;
+  margin-bottom: 1.2rem;
 }
 
 label {
@@ -116,12 +396,6 @@ select:focus, input:focus {
   cursor: pointer;
 }
 
-.checkbox-group input {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-
 .btn {
   background-color: var(--accent-color);
   color: #020617;
@@ -131,6 +405,8 @@ select:focus, input:focus {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s;
+  text-decoration: none;
+  text-align: center;
 }
 
 .btn:hover {
