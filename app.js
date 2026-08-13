@@ -28,6 +28,7 @@ const games = [
     category: 'Monster',
     rarity: 'UR',
     frame1: 'Normal',
+    frame2: '',
     attribute: 'LIGHT',
     CardType: 'Dragon',
     tags: ['InStock'],
@@ -39,10 +40,10 @@ const games = [
     price: 300,
     category: 'Spell',
     rarity: 'R',
-    frame1: 'continuous spell',
-    frame2: '',
+    frame1: 'Continuous spell',
+    frame2: 'Spell',  
     attribute: '',
-    CardType: 'Spell',
+    CardType: '',
     tags: ['OnSale', 'InStock'],
     img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia-2nhgJRtJKPcB0179eNoxV3wMezfR0-IIPivSnC7dTp2tZcC_1wnSrhEFfk3ww6CaB_EkYy6lpqLEx4N2cL5mhqiiz4hDzq3WEXiHZN3JzG3-h4I0m9oIPve-bvSMQYopgsz-83lePaxRb4iLc2Y2ZtvRzcZ1SVThbOXDqMv-zw0MzULmbHI9waYuHM/s1600/Future%20Fusion%20Nova.jpg'
   },
@@ -61,27 +62,120 @@ const games = [
   },
   {
     id: 5,
-    title: 'Discrete Odyssey',
+    title: 'Ghoti of the Deep Beyond',
     price: 400,
     category: 'Action',
-    rarity: 'N',
-    frame: 'Ritual',
+    rarity: 'UR',
+    frame1: 'Synchro',
+    frame2: 'Effect',
     attribute: 'WATER',
-    CardType: 'Field Spell',
+    CardType: 'Fish',
     tags: ['InStock'],
-    img: 'https://picsum.photos/300/200?random=5'
+    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7lUY7jWWxeYPpLtAucdZqphHGaTpEoL1IT3n82WT47CFkU7iH4ervHSXb9d873wBS8MtF9y-JeopBGiQMnlaubjNPF0XhSPlwSJtJ_4OMiO3whu7W0p8BBLbrXN-J1dqEZF_Ozfk9L9DJZmvPLWgduiwqf6_kvUWVvgBYXhDGgKlP1D5JX-87-BaR/s1600/Ghoti%20of%20the%20Deep%20Beyond.jpg'
   },
   {
     id: 6,
-    title: 'Matrix Runner',
-    price: 250,
-    category: 'Strategy',
-    rarity: 'SR',
-    frame: 'Synchro',
-    attribute: 'WIND',
-    CardType: 'Quick-Play Spell',
-    tags: ['OnSale', 'InStock'],
-    img: 'https://picsum.photos/300/200?random=6'
+    title: 'Dummy Card',
+    price: 50,
+    category: 'Monster',
+    rarity: 'R',
+    frame1: '',
+    frame2: '',
+    attribute: '',
+    CardType: '',
+    tags: ['InStock'],
+    img: 'https://dummyimage.com/300x345/000/fff'
+  },
+  {
+    id: 7,
+    title: 'Dummy Card',
+    price: 50,
+    category: 'Monster',
+    rarity: 'R',
+    frame1: '',
+    frame2: '',
+    attribute: '',
+    CardType: '',
+    tags: ['InStock'],
+    img: 'https://dummyimage.com/300x345/000/fff'
+  },
+  {
+    id: 8,
+    title: 'Dummy Card',
+    price: 50,
+    category: 'Monster',
+    rarity: 'R',
+    frame1: '',
+    frame2: '',
+    attribute: '',
+    CardType: '',
+    tags: ['InStock'],
+    img: 'https://dummyimage.com/300x345/000/fff'
+  },
+  {
+    id: 9,
+    title: 'Dummy Card',
+    price: 50,
+    category: 'Monster',
+    rarity: 'R',
+    frame1: '',
+    frame2: '',
+    attribute: '',
+    CardType: '',
+    tags: ['InStock'],
+    img: 'https://dummyimage.com/300x345/000/fff'
+  },
+  {
+    id: 10,
+    title: 'Dummy Card',
+    price: 50,
+    category: 'Monster',
+    rarity: 'R',
+    frame1: '',
+    frame2: '',
+    attribute: '',
+    CardType: '',
+    tags: ['InStock'],
+    img: 'https://dummyimage.com/300x345/000/fff'
+  },
+  {
+    id: 11,
+    title: 'Dummy Card',
+    price: 50,
+    category: 'Monster',
+    rarity: 'R',
+    frame1: '',
+    frame2: '',
+    attribute: '',
+    CardType: '',
+    tags: ['InStock'],
+    img: 'https://dummyimage.com/300x345/000/fff'
+  },
+  {
+    id: 12,
+    title: 'Dummy Card',
+    price: 50,
+    category: 'Monster',
+    rarity: 'R',
+    frame1: '',
+    frame2: '',
+    attribute: '',
+    CardType: '',
+    tags: ['InStock'],
+    img: 'https://dummyimage.com/300x345/000/fff'
+  },
+  {
+    id: 13,
+    title: 'Dummy Card',
+    price: 50,
+    category: 'Monster',
+    rarity: 'R',
+    frame1: '',
+    frame2: '',
+    attribute: '',
+    CardType: '',
+    tags: ['InStock'],
+    img: 'https://dummyimage.com/300x345/000/fff'
   }
 ];
 
@@ -99,7 +193,7 @@ const filterState = {
 
 let filterLogic = 'OR';
 
-let setOperation = 'INTERSECTION';
+
 
 let appliedFilters = {
   rarity: [],
@@ -109,7 +203,6 @@ let appliedFilters = {
 };
 
 let appliedLogic = 'OR';
-let appliedOperation = 'INTERSECTION';
 
 
 /* =========================================================
@@ -615,20 +708,6 @@ function updateFilterChipUI() {
       filterLogic === 'AND'
     );
   }
-
-
-  document
-    .querySelectorAll(
-      '.set-operation-btn'
-    )
-    .forEach(button => {
-
-      button.classList.toggle(
-        'active',
-        button.dataset.operation === setOperation
-      );
-
-    });
 }
 
 
@@ -683,41 +762,79 @@ function gameMatchesGroup(
     return true;
   }
 
+  /*
+   * หลายค่าในกลุ่มเดียวกัน = OR
+   *
+   * เช่น
+   * R + SR
+   * = R OR SR
+   */
 
   if (groupName === 'rarity') {
-
-    return selectedValues.includes(
-      game.rarity
-    );
+    return selectedValues.includes(game.rarity);
   }
 
+
+  /*
+   * FRAME
+   *
+   * รองรับทั้ง:
+   * frame1
+   * frame2
+   * frame
+   *
+   * เพื่อรองรับข้อมูลเก่าด้วย
+   */
 
   if (groupName === 'frame') {
 
-    return selectedValues.includes(
+    const frames = [
+      game.frame1,
+      game.frame2,
       game.frame
+    ].filter(Boolean);
+
+    return selectedValues.some(
+      value => frames.includes(value)
     );
   }
 
 
-  if (groupName === 'attribute') {
+  /*
+   * ATTRIBUTE
+   */
 
+  if (groupName === 'attribute') {
     return selectedValues.includes(
       game.attribute
     );
   }
 
 
+  /*
+   * SPELL / TRAP
+   *
+   * รองรับข้อมูลที่เก็บไว้ใน:
+   * spellType
+   * CardType
+   */
+
   if (groupName === 'spellType') {
 
+    const spellType =
+      game.spellType ||
+      game.CardType ||
+      '';
+
     return selectedValues.includes(
-      game.spellType
+      spellType
     );
   }
 
 
   return true;
 }
+
 
 
 /* =========================================================
@@ -734,22 +851,30 @@ function evaluateSetFilter(game) {
   ];
 
 
+  /*
+   * เอาเฉพาะ Filter Group
+   * ที่มีการเลือกค่า
+   */
+
   const activeGroups =
-    groups.filter(
-      group =>
-        appliedFilters[group].length > 0
+    groups.filter(group =>
+      appliedFilters[group].length > 0
     );
 
 
   /*
-    ไม่มี Filter
-    = แสดงทั้งหมด
-  */
+   * ไม่มี Filter
+   * = แสดงทุกการ์ด
+   */
 
   if (activeGroups.length === 0) {
     return true;
   }
 
+
+  /*
+   * ตรวจสอบแต่ละกลุ่ม
+   */
 
   const results =
     activeGroups.map(group =>
@@ -762,83 +887,23 @@ function evaluateSetFilter(game) {
 
 
   /*
-    INTERSECTION
-    A ∩ B
-  */
+   * OR
+   *
+   * ตรงอย่างน้อย 1 กลุ่ม
+   */
 
-  if (
-    appliedOperation ===
-    'INTERSECTION'
-  ) {
-
-    return results.every(Boolean);
-  }
-
-
-  /*
-    UNION
-    A ∪ B
-  */
-
-  if (
-    appliedOperation ===
-    'UNION'
-  ) {
-
+  if (appliedLogic === 'OR') {
     return results.some(Boolean);
   }
 
 
   /*
-    DIFFERENCE
-    A \ B
+   * AND
+   *
+   * ต้องตรงทุกกลุ่ม
+   */
 
-    กลุ่มแรก = Set หลัก
-    กลุ่มที่เหลือ = Set ที่ต้องตัดออก
-  */
-
-  if (
-    appliedOperation ===
-    'DIFFERENCE'
-  ) {
-
-    const firstGroup =
-      activeGroups[0];
-
-    const firstMatch =
-      gameMatchesGroup(
-        game,
-        firstGroup,
-        appliedFilters[firstGroup]
-      );
-
-    const otherMatches =
-      activeGroups
-        .slice(1)
-        .map(group =>
-          gameMatchesGroup(
-            game,
-            group,
-            appliedFilters[group]
-          )
-        );
-
-    return (
-      firstMatch &&
-      !otherMatches.some(Boolean)
-    );
-  }
-
-
-  /*
-    Fallback: OR / AND
-  */
-
-  if (appliedLogic === 'AND') {
-    return results.every(Boolean);
-  }
-
-  return results.some(Boolean);
+  return results.every(Boolean);
 }
 
 
@@ -858,15 +923,11 @@ function applyYuGiOhFilter() {
   appliedLogic =
     filterLogic;
 
-  appliedOperation =
-    setOperation;
-
-
   applyAllFilters();
-
 
   closeFilterDrawer();
 }
+
 
 
 /* =========================================================
@@ -890,20 +951,14 @@ function resetYuGiOhFilter() {
 
 
   filterLogic = 'OR';
-
   appliedLogic = 'OR';
-
-  setOperation =
-    'INTERSECTION';
-
-  appliedOperation =
-    'INTERSECTION';
 
 
   updateFilterChipUI();
 
   applyAllFilters();
 }
+
 
 
 /* =========================================================
