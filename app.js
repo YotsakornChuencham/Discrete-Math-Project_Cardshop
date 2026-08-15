@@ -11,15 +11,15 @@
 const games = [
   {
     id: 1,
-    title: 'Dark Magician',
-    price: 1200,  
+    title: "Dark Magician, the Pharaoh's Servant",
+    price: 4000,
     category: 'Monster',
     rarity: 'UR',
-    frame1: 'Normal',
+    frame1: 'Effect',
     attribute: 'DARK',
     CardType: 'Spellcaster',
     tags: ['OnSale', 'InStock'],
-    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7EN7rNq-uWY3gaiiw0367p4UDqzLQD4liq_3pVwc4_ZnNBT1mF9PLCzWg_gMo52GpL8eRVQKw_XFZSCrhv8zXnjVcwEU4mjAt9M_zR__oUcUL9QDZ0FcmecOpENP000OzqdLY7iwRvn9ej9m8A2sk_6F4GIBnruApY7Xlz07IuAiCbhwZCuAYTOjH/s1600/Dark%20Magician.jpg'
+    img: 'https://ms.yugipedia.com//c/c1/DarkMagicianthePharaohsServant-LOCH-JP-OP-EA.png'
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const games = [
   {
     id: 3,
     title: 'Future Fusion Nova',
-    price: 300,
+    price: 20,
     category: 'Spell',
     rarity: 'R',
     frame1: 'Continuous spell',
@@ -50,7 +50,7 @@ const games = [
   {
     id: 4,
     title: 'Elemental HERO Flame Wingman',
-    price: 850,
+    price: 200,
     category: 'Monster',
     rarity: 'SR',
     frame1: 'Fusion',
@@ -64,7 +64,7 @@ const games = [
     id: 5,
     title: 'Ghoti of the Deep Beyond',
     price: 400,
-    category: 'Action',
+    category: 'Monster',
     rarity: 'UR',
     frame1: 'Synchro',
     frame2: 'Effect',
@@ -75,107 +75,107 @@ const games = [
   },
   {
     id: 6,
-    title: 'Dummy Card',
+    title: 'Odd-Eyes Arcray Dragon',
     price: 50,
     category: 'Monster',
-    rarity: 'R',
-    frame1: '',
-    frame2: '',
-    attribute: '',
-    CardType: '',
+    rarity: 'SR',
+    frame1: 'Fusion',
+    frame2: 'Pendulum',
+    attribute: 'Light',
+    CardType: 'Dragon',
     tags: ['InStock'],
-    img: 'https://dummyimage.com/300x345/000/fff'
+    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiE_PzYewQDgNvT2KkUqokadUsQHNVeBfDN7g3ZuKt9Gms-pGkrl8FEfzGqrrsHHZwULpv_mpXPZNZmVoyrXQ8jGCuo0lkxfdPSuhyovCazM2KKt-lytqmMv8WEDnd7joCzVGInXsGH6j8K8NocTvSyXvtdXGrcW7pWOF01gki3fWT5hDm1G0fx_THDG0U/s1600/Odd-Eyes%20Arcray%20Dragon.jpg'
   },
   {
     id: 7,
-    title: 'Dummy Card',
+    title: 'Odd-Eyes Arc Pendulum Dragon',
     price: 50,
     category: 'Monster',
     rarity: 'R',
-    frame1: '',
-    frame2: '',
-    attribute: '',
-    CardType: '',
+    frame1: 'Normal',
+    frame2: 'Pendulum',
+    attribute: 'Dark',
+    CardType: 'Dragon',
     tags: ['InStock'],
-    img: 'https://dummyimage.com/300x345/000/fff'
+    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_QAsR2HhEBtZ_-m0XfbpmbSSaSdEniU6WlVCe-ou1IkuOueSBfsSV26nZvKk03wOxxWsYnqB7mS27n1GovaiATQZXTck0pW3w8nG6d4e6i5YmyG3pfZ2utoE6q48BqoKSaAB9vVlVe0jDwyXFkeZOyicdhNPpYuSncN9YUAEuvIIXIU1-IITmcyt7uo4/s1600/Odd-Eyes%20Arc%20Pendulum%20Dragon.jpg'
   },
   {
     id: 8,
-    title: 'Dummy Card',
+    title: 'Odd-Eyes Rebellion Xyz Dragon',
     price: 50,
     category: 'Monster',
     rarity: 'R',
-    frame1: '',
-    frame2: '',
-    attribute: '',
-    CardType: '',
+    frame1: 'XYZ',
+    frame2: 'Pendulum',
+    attribute: 'Dark',
+    CardType: 'Dragon',
     tags: ['InStock'],
-    img: 'https://dummyimage.com/300x345/000/fff'
+    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDICA4amCBH8Urfw1qAGJwgshNpuWjRrQXjTlQHJA1NM7RWVSfKoaGvUzTJOCNkzduOrVQYhmw4oxIN6IjoXpB3mLblXGXYztUJDT-or9Jwb-gViEb-jovCHN7NMNWFFxOpSDY82lLM3u_SFBBqfGyTtrXixIY3sV_TjUehyphenhyphenaNqyROBVewTYEn5buf4BQ/s1600/Odd-Eyes%20Rebellion%20Xyz%20Dragon.jpg'
   },
   {
     id: 9,
-    title: 'Dummy Card',
+    title: 'Odd-Eyes Pendulumgraph Dragon Card',
     price: 50,
     category: 'Monster',
     rarity: 'R',
-    frame1: '',
-    frame2: '',
-    attribute: '',
-    CardType: '',
+    frame1: 'Ritual',
+    frame2: 'Pendulum',
+    attribute: 'Light',
+    CardType: 'Dragon',
     tags: ['InStock'],
-    img: 'https://dummyimage.com/300x345/000/fff'
+    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7e6SiCVQAtWoyqf3HKclRjINqsUWjE0SULJRbpXnIYx-H8IAeVPcvGCHgkMmTR2br3PsUlisDGiy3lLrN77qrPnSgA5eA0_rjLbgQ2vobWnhrU_uoiaFWIS6WCHAvfVo8OTCSyVzxJLQBvZihRWieM3RzxImhqis0wXX-LMY10SYlXY4M1gwTJ_f2wS0/s1600/Odd-Eyes%20Pendulumgraph%20Dragon.jpg'
   },
   {
     id: 10,
-    title: 'Dummy Card',
+    title: 'Odd-Eyes Wing Dragon',
     price: 50,
     category: 'Monster',
     rarity: 'R',
-    frame1: '',
-    frame2: '',
-    attribute: '',
-    CardType: '',
+    frame1: 'Synchro',
+    frame2: 'Pendulum',
+    attribute: 'Dark',
+    CardType: 'Dragon',
     tags: ['InStock'],
-    img: 'https://dummyimage.com/300x345/000/fff'
+    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgv8AZtPXbAVDCSUKM5NZGZaThR-YkVbumufmaQ3Zgq5wHmP4NkEkpOHuBIr9g49oTxXxfLSLELoJfEgKNBPKuqmetFeqCfICP76exN9J3WTzmesF7g6ZR0pSBdCULyq0-_0n98lA8CsN-TTclmAJ2qTY4y3Ml97lIKX_6zMY3wSxO8F_0GTEl2XXeT8yw/s1600/Odd-Eyes%20Wing%20Dragon.jpg'
   },
   {
     id: 11,
-    title: 'Dummy Card',
+    title: 'Ragnaraika Stag Sovereign',
     price: 50,
     category: 'Monster',
-    rarity: 'R',
-    frame1: '',
-    frame2: '',
-    attribute: '',
-    CardType: '',
+    rarity: 'UR',
+    frame1: 'Link',
+    frame2: 'Effect',
+    attribute: 'Earth',
+    CardType: 'Insect',
     tags: ['InStock'],
-    img: 'https://dummyimage.com/300x345/000/fff'
+    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeAz2-Ioc78vhPuA4O7RMYmUEwZzjveSDSrf58AyGHzRPXV-mmUoLnvaMDB66gHjt8FJUFHOrmdH-xbMND8qH3Uk0MoBFnlSRiiCP0Bof-zYHoEQ85C2btWZOb3TiPTXbhXmXFMU6WeWdz1VtBVkOd9CW_DhY9B4o7PJ9BQog24kJuGG18G4GLwoLPR6U/s1600/Ragnaraika%20Stag%20Sovereign.jpg'
   },
   {
     id: 12,
-    title: 'Dummy Card',
+    title: 'Ragnaraika Bleached Wisteria',
     price: 50,
-    category: 'Monster',
-    rarity: 'R',
-    frame1: '',
-    frame2: '',
+    category: 'Trap',
+    rarity: 'N',
+    frame1: 'Trap',
+    frame2: 'Continuous trap',
     attribute: '',
     CardType: '',
     tags: ['InStock'],
-    img: 'https://dummyimage.com/300x345/000/fff'
+    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtn2Vkbk5W9yAv9y0cvdxg4PVB53sOB_zEPGeRe40yRk4YQavoYIVPaIW-G36vqMy51ZJTDMb9-2xC3H5RmlQfilUdirBnYEmN14qfLEqp9PF7cFTeSyEwBXs51d4Ita56fvgWEv7W28VlmcRSdtAgUqzbjygK5bpJtmXpceIqjWw1Lv3co1C9MeLEQBY/s1600/Ragnaraika%20Bleached%20Wisteria.jpg'
   },
   {
     id: 13,
-    title: 'Dummy Card',
+    title: 'Obelisk the Tormentor',
     price: 50,
     category: 'Monster',
-    rarity: 'R',
-    frame1: '',
+    rarity: 'SR',
+    frame1: 'Effect',
     frame2: '',
-    attribute: '',
-    CardType: '',
+    attribute: 'DIVINE',
+    CardType: 'Divine-Beast',
     tags: ['InStock'],
-    img: 'https://dummyimage.com/300x345/000/fff'
+    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgd8CBqEeV2cEuddECPY7Ql3pfCQ8s6FRLwAc7gVgv2Wkk8XwJx41yUx8Kfo-xqJ-yolCAt9PnYgbifPs_wav8dXp03mUAYaN_ZgzERxBQg9ZA10L-SvJwKjjonGch5l3pJ5y8PuTHM0o3PBFlXfCWmbsKK-lEBjybs7udi_aRzPF3ftviHlbhZqL79/s1600/Obelisk%20the%20Tormentor.jpg'
   }
 ];
 
@@ -786,18 +786,23 @@ function gameMatchesGroup(
    * เพื่อรองรับข้อมูลเก่าด้วย
    */
 
-  if (groupName === 'frame') {
+if (groupName === 'frame') {
+  const frames = [
+    game.frame1,
+    game.frame2,
+    game.frame
+  ].filter(Boolean);
 
-    const frames = [
-      game.frame1,
-      game.frame2,
-      game.frame
-    ].filter(Boolean);
-
-    return selectedValues.some(
+  if (filterLogic === 'AND') {
+    return selectedValues.every(
       value => frames.includes(value)
     );
   }
+
+  return selectedValues.some(
+    value => frames.includes(value)
+  );
+}
 
 
   /*
