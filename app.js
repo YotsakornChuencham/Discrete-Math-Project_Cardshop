@@ -16,7 +16,7 @@ const games = [
     category: 'Monster',
     rarity: 'UR',
     frame1: 'Effect',
-    attribute: 'DARK',
+    attribute: 'Dark',
     CardType: 'Spellcaster',
     tags: ['OnSale', 'InStock'],
     img: 'https://ms.yugipedia.com//c/c1/DarkMagicianthePharaohsServant-LOCH-JP-OP-EA.png'
@@ -29,7 +29,7 @@ const games = [
     rarity: 'UR',
     frame1: 'Normal',
     frame2: '',
-    attribute: 'LIGHT',
+    attribute: 'Light',
     CardType: 'Dragon',
     tags: ['InStock'],
     img: 'https://blogger.googleusercontent.com/img/a/AVvXsEjAeaoHM1qW8j58P7Kf_RDdnMTm0OoYZCKljjJ0dZmijPLU-u0PzIhhdiZ_f4DPmZrx1qdcN0HQqBRWnj9nHqZA8AIoXFZJ_xhqbQWucG0twgdHZa0zqDL0JYBxHq0hRvhghO8rZUljd8lArkzzkIM46XH7yrT0WBA_pfXxG1A38bubRQkAX_n_HuKw'
@@ -40,10 +40,11 @@ const games = [
     price: 20,
     category: 'Spell',
     rarity: 'R',
-    frame1: 'Continuous spell',
+    frame1: '',
     frame2: 'Spell',  
     attribute: '',
     CardType: '',
+    spellType: 'Continuous Sell',
     tags: ['OnSale', 'InStock'],
     img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia-2nhgJRtJKPcB0179eNoxV3wMezfR0-IIPivSnC7dTp2tZcC_1wnSrhEFfk3ww6CaB_EkYy6lpqLEx4N2cL5mhqiiz4hDzq3WEXiHZN3JzG3-h4I0m9oIPve-bvSMQYopgsz-83lePaxRb4iLc2Y2ZtvRzcZ1SVThbOXDqMv-zw0MzULmbHI9waYuHM/s1600/Future%20Fusion%20Nova.jpg'
   },
@@ -68,7 +69,7 @@ const games = [
     rarity: 'UR',
     frame1: 'Synchro',
     frame2: 'Effect',
-    attribute: 'WATER',
+    attribute: 'Water',
     CardType: 'Fish',
     tags: ['InStock'],
     img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7lUY7jWWxeYPpLtAucdZqphHGaTpEoL1IT3n82WT47CFkU7iH4ervHSXb9d873wBS8MtF9y-JeopBGiQMnlaubjNPF0XhSPlwSJtJ_4OMiO3whu7W0p8BBLbrXN-J1dqEZF_Ozfk9L9DJZmvPLWgduiwqf6_kvUWVvgBYXhDGgKlP1D5JX-87-BaR/s1600/Ghoti%20of%20the%20Deep%20Beyond.jpg'
@@ -172,7 +173,7 @@ const games = [
     rarity: 'SR',
     frame1: 'Effect',
     frame2: '',
-    attribute: 'DIVINE',
+    attribute: 'Divine',
     CardType: 'Divine-Beast',
     tags: ['InStock'],
     img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgd8CBqEeV2cEuddECPY7Ql3pfCQ8s6FRLwAc7gVgv2Wkk8XwJx41yUx8Kfo-xqJ-yolCAt9PnYgbifPs_wav8dXp03mUAYaN_ZgzERxBQg9ZA10L-SvJwKjjonGch5l3pJ5y8PuTHM0o3PBFlXfCWmbsKK-lEBjybs7udi_aRzPF3ftviHlbhZqL79/s1600/Obelisk%20the%20Tormentor.jpg'
@@ -1091,6 +1092,12 @@ function renderGameCards(
   ${
     game.CardType && String(game.CardType).trim()
       ? `<span>${escapeHTML(game.CardType)}</span>`
+      : ''
+  }
+
+  ${
+    game.spellType && String(game.spellType).trim()
+      ? `<span>${escapeHTML(game.spellType)}</span>`
       : ''
   }
 </div>
