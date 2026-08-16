@@ -635,6 +635,25 @@ header {
 
 }
 
+.sold-out-btn {
+  background: #4b5563;
+  color: #d1d5db;
+  cursor: not-allowed;
+  opacity: 0.75;
+  border: 1px solid #6b7280;
+}
+
+.sold-out-btn:hover {
+  background: #4b5563;
+  color: #d1d5db;
+  transform: none;
+}
+
+.sold-out-btn:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 
 .card-price {
 

@@ -18,7 +18,7 @@ const games = [
     frame1: 'Effect',
     attribute: 'Dark',
     CardType: 'Spellcaster',
-    tags: ['OnSale', 'InStock'],
+    tags: ['SoldOut'],
     img: 'https://ms.yugipedia.com//c/c1/DarkMagicianthePharaohsServant-LOCH-JP-OP-EA.png'
   },
   {
@@ -45,7 +45,7 @@ const games = [
     attribute: '',
     CardType: '',
     spellType: 'Continuous Sell',
-    tags: ['OnSale', 'InStock'],
+    tags: ['SoldOut'],
     img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia-2nhgJRtJKPcB0179eNoxV3wMezfR0-IIPivSnC7dTp2tZcC_1wnSrhEFfk3ww6CaB_EkYy6lpqLEx4N2cL5mhqiiz4hDzq3WEXiHZN3JzG3-h4I0m9oIPve-bvSMQYopgsz-83lePaxRb4iLc2Y2ZtvRzcZ1SVThbOXDqMv-zw0MzULmbHI9waYuHM/s1600/Future%20Fusion%20Nova.jpg'
   },
   {
@@ -58,7 +58,7 @@ const games = [
     frame2: 'Effect',
     attribute: 'Wind',
     CardType: 'Warrior',
-    tags: ['PreOrder'],
+    tags: ['InStock'],
     img: 'https://blogger.googleusercontent.com/img/a/AVvXsEg-ys-lkkBWu_k1sgRs9-kJPAwwDFE6HNVCYw6yGo3Ao_r0kxkoYU_SX8Q-PT-JV2rwdAi5PLKSmju4wwnz3Psc-O_U5IBJCby-F1SSkA7uifKroqEO4u-wk2z5yr0xPXokpf1-tUftPr3D3Nc9wfUqlKFdJw9Dp60hf--l3iVDESy3ryO4AWroQK0p'
   },
   {
@@ -77,9 +77,9 @@ const games = [
   {
     id: 6,
     title: 'Odd-Eyes Arcray Dragon',
-    price: 50,
+    price: 500,
     category: 'Monster',
-    rarity: 'SR',
+    rarity: 'UR',
     frame1: 'Fusion',
     frame2: 'Pendulum',
     attribute: 'Light',
@@ -90,9 +90,9 @@ const games = [
   {
     id: 7,
     title: 'Odd-Eyes Arc Pendulum Dragon',
-    price: 50,
+    price: 5,
     category: 'Monster',
-    rarity: 'R',
+    rarity: 'N',
     frame1: 'Normal',
     frame2: 'Pendulum',
     attribute: 'Dark',
@@ -116,9 +116,9 @@ const games = [
   {
     id: 9,
     title: 'Odd-Eyes Pendulumgraph Dragon Card',
-    price: 50,
+    price: 250,
     category: 'Monster',
-    rarity: 'R',
+    rarity: 'SR',
     frame1: 'Ritual',
     frame2: 'Pendulum',
     attribute: 'Light',
@@ -142,7 +142,7 @@ const games = [
   {
     id: 11,
     title: 'Ragnaraika Stag Sovereign',
-    price: 50,
+    price: 300,
     category: 'Monster',
     rarity: 'UR',
     frame1: 'Link',
@@ -155,7 +155,7 @@ const games = [
   {
     id: 12,
     title: 'Ragnaraika Bleached Wisteria',
-    price: 50,
+    price: 25,
     category: 'Trap',
     rarity: 'N',
     frame1: 'Trap',
@@ -167,8 +167,47 @@ const games = [
   },
   {
     id: 13,
+    title: 'Elemental HERO Honest Neos',
+    price: 1000,
+    category: 'Monster',
+    rarity: 'UR',
+    frame1: 'Effect',
+    frame2: '',
+    attribute: 'Light',
+    CardType: 'Warrior',
+    tags: ['SoldOut'],
+    img: 'https://blogger.googleusercontent.com/img/a/AVvXsEiCPCASRiL6qev5LV5kJ11RunlpVNyjnbjCqHeIqYCiKor2Vyuz8rwVU7_HDClYJVJBuDCvNU6sBjWYjRbPbxPBK2FUOWP3CUn3e0I-yDj3I_KkMNNm80rhv6v8AOPUFpAPnR6j9D-MtB5NFopPoyy2YR0uwg3LESvvhukD16hNYO5i5wgv_QthHDDc'
+  },
+  {
+    id: 14,
+    title: 'Elemental HERO Spirit of Neos',
+    price: 10,
+    category: 'Monster',
+    rarity: 'N',
+    frame1: 'Effect',
+    frame2: '',
+    attribute: 'Light',
+    CardType: 'Warrior',
+    tags: ['InStock'],
+    img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRsRw5KpPD2hGbW6F9xlooAHGsuAlQEipzfenYuWcDgJJJ5IE-7Wy5hUV39Ekbrdn_jHQ7G7WRSvoYUmhJq1l8InM0lgjJ0o4AHwDbHZsmz0iKP87kIxP0yZGnmmM6Ukf3uge5VZe2E_xKYLgrf4SO24djk3fEi3dhyZx1sR_8Wq1e-B2nMHCMaoaD/s1600/Elemental%20HERO%20Spirit%20of%20Neos.jpg'
+  },
+  {
+    id: 15,
+    title: 'Yubel',
+    price: 250,
+    category: 'Monster',
+    rarity: 'SR',
+    frame1: 'Effect',
+    frame2: '',
+    attribute: 'Dark',
+    CardType: 'Fiend',
+    tags: ['InStock'],
+    img: 'https://blogger.googleusercontent.com/img/a/AVvXsEiP_A8agP93fenztP0hhRx-R0m8Fkqei_qqnwHuocP7j_cCK_6QCqIQwI9xW251EaxElF_GDAWQQZpllELa7pzHggwkI5bgFyH3pontvQYM_-gHNuxH4eHPxcpYUG5sC5sSjPFCgJDl1sEGqN1g0SEHOPimiDfFEVQI2W4u8q3dP3z-ORiiGncTX2QM=s614'
+  },
+  {
+    id: 16,
     title: 'Obelisk the Tormentor',
-    price: 50,
+    price: 250,
     category: 'Monster',
     rarity: 'SR',
     frame1: 'Effect',
@@ -338,6 +377,12 @@ function addToCart(gameId) {
   );
 
   if (!game) {
+    return;
+  }
+
+  // ❌ SoldOut ไม่สามารถเพิ่มลงตะกร้าได้
+  if (game.tags.includes('SoldOut')) {
+    alert('สินค้านี้ SoldOut แล้ว ไม่สามารถเพิ่มลงตะกร้าได้');
     return;
   }
 
@@ -1118,21 +1163,34 @@ function renderGameCards(
 
 
         <div class="card-bottom">
+  <span class="card-price">
+    ${game.price.toLocaleString('th-TH')} ฿
+  </span>
 
-          <span class="card-price">
-            ${game.price.toLocaleString('th-TH')} ฿
-          </span>
-
-          <button
-            class="btn"
-            type="button"
-            onclick="addToCart(${game.id})"
-          >
-            🛒 ใส่ตะกร้า
-          </button>
+  ${
+    game.tags.includes('SoldOut')
+      ? `
+        <button
+          class="btn sold-out-btn"
+          type="button"
+          disabled
+          aria-label="สินค้าหมด"
+        >
+          ❌ SoldOut
+        </button>
+      `
+      : `
+        <button
+          class="btn"
+          type="button"
+          onclick="addToCart(${game.id})"
+        >
+          🛒 ใส่ตะกร้า
+        </button>
+          `
+        }
 
         </div>
-
       </article>
 
     `).join('');
@@ -1253,98 +1311,210 @@ function initBooleanPage() {
 
   function evaluateBooleanLogic() {
 
-    const P =
-      pVal.checked;
-
-    const Q =
-      qVal.checked;
-
-    const R =
-      rVal.checked;
+  const P = pVal.checked;
+  const Q = qVal.checked;
+  const R = rVal.checked;
 
 
-    /*
-      Formula:
+  /*
+    P = InStock
+    Q = SoldOut
+    R = ราคา < 500
 
-      (P ∧ Q) ∨ R
-    */
+    Logic:
 
-    const overallLogic =
-      (P && Q) || R;
+    - เลือก InStock อย่างเดียว
+      → แสดง InStock
+
+    - เลือก SoldOut อย่างเดียว
+      → แสดง SoldOut
+
+    - เลือก InStock + SoldOut
+      → AND
+      → ต้องมีทั้ง 2 Tag
+
+    - ถ้าเลือก R ด้วย
+      → ใช้ AND กับเงื่อนไขราคา
+  */
 
 
-    const statusBox =
-      document.getElementById(
-        'truthValueResult'
-      );
+  const hasCondition =
+    P || Q || R;
 
+
+  const statusBox =
+    document.getElementById(
+      'truthValueResult'
+    );
+
+
+  /*
+    ถ้าไม่ได้เลือกอะไร
+  */
+
+  if (!hasCondition) {
 
     if (statusBox) {
 
       statusBox.innerText =
-        overallLogic
-          ? 'TRUE (แสดงผล)'
-          : 'FALSE (ไม่พบข้อมูล)';
+        'กรุณาเลือกเงื่อนไข';
 
-      statusBox.classList.toggle(
-        'truth-true',
-        overallLogic
+      statusBox.classList.remove(
+        'truth-true'
       );
 
-      statusBox.classList.toggle(
-        'truth-false',
-        !overallLogic
+      statusBox.classList.add(
+        'truth-false'
       );
     }
 
 
-    /*
-      IMPORTANT
-
-      Filter ตาม Proposition จริง:
-
-      P = InStock
-      Q = OnSale
-      R = Price < 500
-
-      Result:
-
-      (P ∧ Q) ∨ R
-    */
-
-    const filtered =
-      games.filter(game => {
-
-        const gameP =
-          game.tags.includes(
-            'InStock'
-          );
-
-        const gameQ =
-          game.tags.includes(
-            'OnSale'
-          );
-
-        const gameR =
-          game.price < 500;
-
-
-        return (
-          (P && Q
-            ? gameP && gameQ
-            : false)
-          || (R
-            ? gameR
-            : false)
-        );
-      });
-
-
     renderGameCards(
       'booleanResults',
-      filtered
+      []
+    );
+
+    return;
+  }
+
+
+  /*
+    Filter สินค้า
+  */
+
+  const filtered =
+    games.filter(game => {
+
+      const gameP =
+        game.tags.includes(
+          'InStock'
+        );
+
+
+      const gameQ =
+        game.tags.includes(
+          'SoldOut'
+        );
+
+
+      const gameR =
+        game.price < 500;
+
+
+      /*
+        -----------------------------
+        กรณีเลือก InStock + SoldOut
+        -----------------------------
+      */
+
+      if (P && Q) {
+
+        const statusMatch =
+          gameP && gameQ;
+
+        /*
+          ถ้าเลือก R ด้วย
+        */
+
+        if (R) {
+          return (
+            statusMatch &&
+            gameR
+          );
+        }
+
+        return statusMatch;
+      }
+
+
+      /*
+        -----------------------------
+        เลือก InStock อย่างเดียว
+        -----------------------------
+      */
+
+      if (P) {
+
+        if (R) {
+          return (
+            gameP &&
+            gameR
+          );
+        }
+
+        return gameP;
+      }
+
+
+      /*
+        -----------------------------
+        เลือก SoldOut อย่างเดียว
+        -----------------------------
+      */
+
+      if (Q) {
+
+        if (R) {
+          return (
+            gameQ &&
+            gameR
+          );
+        }
+
+        return gameQ;
+      }
+
+
+      /*
+        -----------------------------
+        เลือกแค่ราคา
+        -----------------------------
+      */
+
+      if (R) {
+        return gameR;
+      }
+
+
+      return false;
+
+    });
+
+
+  /*
+    แสดงสถานะ
+  */
+
+  if (statusBox) {
+
+    statusBox.innerText =
+      filtered.length > 0
+        ? `พบสินค้า ${filtered.length} รายการ`
+        : 'FALSE (ไม่พบข้อมูล)';
+
+
+    statusBox.classList.toggle(
+      'truth-true',
+      filtered.length > 0
+    );
+
+
+    statusBox.classList.toggle(
+      'truth-false',
+      filtered.length === 0
     );
   }
+
+
+  /*
+    แสดงสินค้า
+  */
+
+  renderGameCards(
+    'booleanResults',
+    filtered
+  );
+}
 
 
   pVal.addEventListener(
